@@ -6,10 +6,11 @@ function MarkdownReact({}: Props) {
   const [markdown, setMarkdown] = useState("");
   return (
     <>
-      <div className="center_div">
+      <div className="container">
+        <div className="row">
+          <div className="col-5">
         <textarea
           className="left_side"
-          id=""
           cols={100}
           rows={20}
           value={markdown}
@@ -17,8 +18,14 @@ function MarkdownReact({}: Props) {
             setMarkdown(e.target.value);
           }}
         ></textarea>
+
+          </div>
+          <div className="col-5">
         <div className="right_side">
           <ReactMarkdown>{markdown}</ReactMarkdown>
+        </div>
+
+          </div>
         </div>
       </div>
     </>
